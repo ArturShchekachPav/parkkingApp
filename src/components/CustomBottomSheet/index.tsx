@@ -1,19 +1,17 @@
 import { BottomSheetBackdrop, BottomSheetBackdropProps, BottomSheetModal, BottomSheetView } from '@gorhom/bottom-sheet';
-import { ReactNode, useCallback, useEffect, useRef } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
+import { BlurView } from '@react-native-community/blur';
 import {
     StyleSheet
 } from 'react-native';
-import { BlurView } from '@react-native-community/blur';
+import { styles } from './styles';
+import { TCustomBottomSheetProps } from './types';
 
-const styles = StyleSheet.create({
-    sheet: {
-        borderTopRightRadius: 24,
-        borderTopLeftRadius: 24,
-        backgroundColor: '#FFFFFF',
-    }
-});
-
-export default function CustomBottomSheet({isOpen, onClose, children}: {isOpen: boolean, onClose: () => void, children: ReactNode}) {
+export default function CustomBottomSheet({
+    isOpen,
+    onClose,
+    children
+}: TCustomBottomSheetProps) {
     const bottomSheetRef = useRef<BottomSheetModal>(null);
 
     useEffect(() => {
