@@ -31,7 +31,8 @@ const styles = StyleSheet.create({
     paddingTop: 40,
     paddingHorizontal: 20,
     flex: 1,
-    position: 'relative'
+    position: 'relative',
+    backgroundColor: '#fff'
   },
   gradient: {
     position: 'absolute',
